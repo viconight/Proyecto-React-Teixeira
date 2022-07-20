@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 
 function App() {
       return (
+        <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
         <div className="container-fluid">
           <a className="navbar-brand" href="index.html">Vongole Manga</a>
@@ -40,6 +41,8 @@ function App() {
           </div>
         </div>
       </nav>
+      <Navbar />
+      </div>
   );
 }
 
