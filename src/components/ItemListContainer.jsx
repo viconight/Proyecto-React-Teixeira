@@ -1,7 +1,7 @@
-import ItemCount from '../ItemCount';
-import ItemList from '../ItemList';
+import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 import React,{useState,useEffect} from 'react';
-import Title from '../Title';
+import Title from './Title';
 
 const mangas = [
     { id: 1, imagen: "https://www.ivrea.com.ar/onepiece/onepiece01.jpg", titulo: "One Piece"},
