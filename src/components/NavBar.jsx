@@ -1,5 +1,6 @@
 import React from 'react'; 
 import CartWidget from './CartWidget'; 
+import { NavLink } from 'react-router-dom';
 
 
 export const NavBar = () => {
@@ -7,35 +8,35 @@ export const NavBar = () => {
         <div className='contenedor'>
         <nav className="navbar navbar-expand-lg navbar-light bg-transparent">
         <div className="container-fluid">
-          <a className="navbar-brand" href="index.html">Vongole Manga</a>
+          <NavLink className="navbar-brand" to='/' >Vongole Manga</NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <NavLink className="nav-link active" aria-current="page" to='/'>Inicio</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="manga.html" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <NavLink className="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" to='categoria'>
                   Manga
-                </a>
+                </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a className="dropdown-item" href="ivrea.html">Ivrea</a></li>
-                  <li><a className="dropdown-item" href="panini.html">Panini</a></li>
+                  <li><a className="dropdown-item" >Ivrea</a></li>
+                  <li><a className="dropdown-item" >Panini</a></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="tcg.html">TCG</a>
+                <NavLink className="nav-link" to='/categoria/Ivrea'>Ivrea</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="figuras.html">Figuras</a>
+                <NavLink className="nav-link" to='/categoria/Panini'>Panini</NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="merchandising.html">Merchandising</a>
+                <a className="nav-link" >Merchandising</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="contacto.html">Contacto</a>
+                <a className="nav-link" >Contacto</a>
               </li>
               <li>
                 <CartWidget />

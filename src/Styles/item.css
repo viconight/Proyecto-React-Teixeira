@@ -1,5 +1,11 @@
 .card{
     display:flex;
     flex-wrap: wrap;
-    align-content: center;
+    text-align: center;
+    
+}
+
+.card-img-top{
+    width: 200px;
+    height: 270px;
 }
