@@ -18,7 +18,7 @@ export const NavBar = () => {
                 <NavLink className="nav-link active" aria-current="page" to='/'>Inicio</NavLink>
               </li>
               <li className="nav-item dropdown">
-                <NavLink className="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" to='categoria'>
+                <NavLink className="nav-link dropdown-toggle"  id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" to='/'>
                   Manga
                 </NavLink>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

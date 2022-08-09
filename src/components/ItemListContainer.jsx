@@ -1,4 +1,3 @@
-import ItemCount from './ItemCount';
 import ItemList from './ItemList';
 import React,{useState,useEffect} from 'react';
 import Title from './Title';
@@ -30,14 +29,10 @@ export const ItemListContainer = () => {
         getData.then(res => setData(res))
     }
     }, [categoriaId]);
-
-    const onAdd = (quantity) =>{
-        alert(`compraste ${quantity} unidades`);
-    }
+    
     return(
         <>
         <Title greeting='Vongole Manga!' />
-        <ItemCount initial={1} stock={10} onAdd={onAdd}/> 
         <ItemList data={data} />
         </>
     )

@@ -1,9 +1,17 @@
+import ItemCount from './ItemCount';
 import '../Styles/item.css';
-import React from "react";
-
+import React, {useState} from "react";
+import {Link} from 'react-router-dom';
 
 
 export const ItemDetail = ({data}) =>{
+
+    const [goToCart, setGoToCart] = useState (false);
+
+    const onAdd = (quantity) =>{
+        setGoToCart(true);
+    }
+
     return(
         <>
          <div className="card" >
@@ -11,7 +19,12 @@ export const ItemDetail = ({data}) =>{
              <img src={data.imagen} className="card-img-top" alt="" width="200" height="270"/>
              <h5 className="card-title"> {data.titulo}</h5>
              <p className="card-synopsis"> {data.sinopsis}</p>
-             <p className="card-price"> {data.precio}</p>   
+             <p className="card-price"> {data.precio}</p> 
+             {
+                goToCart
+                ?<Link to='/cart'>Finalizar compra</Link>
+                :<ItemCount initial={3} stock={10} onAdd={onAdd} />   
+             }   
          </div>
      </div> 
      </>
