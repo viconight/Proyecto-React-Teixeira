@@ -1,8 +1,11 @@
 import '../Styles/item.css';
+import { Link } from 'react-router-dom';
 import React from "react";
-import { Link } from 'react-router-dom'
+
+
 
 const Item = ({info}) =>{
+
     return(
         <>
          <div className="card" >
