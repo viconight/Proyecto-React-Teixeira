@@ -22,14 +22,14 @@ export const ItemDetail = ({data}) =>{
         <>
          <div className="card" >
          <div className="card-body">
-             <img src={data.imagen} className="card-img-top" alt="" width="200" height="270"/>
-             <h5 className="card-title"> {data.titulo}</h5>
-             <p className="card-synopsis"> {data.sinopsis}</p>
-             <p className="card-price"> {data.precio}</p> 
+             <img src={data.image} className="card-img-top" alt="" width="200" height="270"/>
+             <h5 className="card-title"> {data.title}</h5>
+             <p className="card-synopsis"> {data.synopsis}</p>
+             <p className="card-price"> ${data.price}</p> 
              {
                 goToCart
                 ?<Link to='/cart'>Finalizar compra</Link>
-                :<ItemCount initial={3} stock={10} onAdd={onAdd} />   
+                :<ItemCount initial={1} stock={10} onAdd={onAdd} />   
              }   
          </div>
      </div> 

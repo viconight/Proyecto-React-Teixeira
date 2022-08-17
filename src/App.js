@@ -1,4 +1,3 @@
-import '../src/Styles/App.css';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';

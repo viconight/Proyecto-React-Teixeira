@@ -9,13 +9,23 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({children}) =>{
     const [cart, setCart] =useState([]);
 
-    const addProduct = (item, newQuantity) =>{
-        const newCart = cart.filter(prod => prod.id !== item.id);
-        newCart.push({...item, quantity: newQuantity});
-        setCart(newCart)
+    const addProduct = (item, quantity) =>{
+        if(isInCart(item.id)){
+            setCart(cart.map(product =>{
+                return product.id === item.id ? {...product, quantity: product.quantity + quantity} : product
+            }));
+        } else {
+            setCart([...cart, {...item, quantity}]);
+       }
+    }    
+
+    console.log('Carrito', cart)
+
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
     }
 
-    console.log('carrito: ', cart);
+    const totalProducts = () => cart.reduce((accumulator, actualProduct) => accumulator + actualProduct.quantity, 0);
 
     const clearCart = () => setCart([]);
 
@@ -30,7 +40,10 @@ const CartContextProvider = ({children}) =>{
             clearCart,
             isInCart,
             removeProduct,
-            addProduct
+            addProduct,
+            totalPrice,
+            totalProducts,
+            cart     
         }}>
             {children}
         </CartContext.Provider>
