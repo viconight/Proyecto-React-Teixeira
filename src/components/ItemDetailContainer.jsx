@@ -16,7 +16,7 @@ export const ItemDetailContainer = () =>{
         const queryDoc = doc(querydb, 'Mangas', detalleId);
         getDoc(queryDoc)
         .then(res => setData({id: res.id, ...res.data()}))
-    }, [])
+    }, [detalleId])
 
     
     return (
