@@ -3,6 +3,8 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import { useCartContext } from "./CartContext";
 import ItemCart from "./itemCart";
+import '../Styles/cart.css';
+import Swal from 'sweetalert2'
 
 
 export const Cart = () => {
@@ -20,6 +22,12 @@ export const Cart = () => {
     }
 
     const handleClick = () => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No pudimos procesar tu compra!',
+            footer: '<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Porque dio error?</a>'
+          })
         const db = getFirestore();
         const orderCollection = collection(db, 'orders');
         addDoc(orderCollection, order)
@@ -30,20 +38,24 @@ export const Cart = () => {
     if(cart.length === 0){
         return(
         <>
+        <div className='content'>
         <p>No hay productos en el carrito,</p>
         <Link to='/'>Pero , podes agregarle cosas! :D</Link>
+        </div>
         </>
         )
     }
     return(
     <>
+        <div className='carrito'>
     {
         cart.map(product => <ItemCart key={product.id} product={product} />)
     }
     <p>
         Total: ${totalPrice()}
     </p>
-    <button onClick={handleClick}> Finalizar compra</button>
+    <button onClick={handleClick}>Finalizar compra</button>
+    </div>
     </>
     )
     

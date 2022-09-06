@@ -1,5 +1,5 @@
 import ItemCount from './ItemCount';
-import '../Styles/item.css';
+import '../Styles/ItemDetail.css'
 import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 import { useCartContext } from './CartContext';
@@ -20,9 +20,11 @@ export const ItemDetail = ({data}) =>{
 
     return(
         <>
-         <div className="card" >
-         <div className="card-body">
-             <img src={data.image} className="card-img-top" alt="" width="200" height="270"/>
+         <div className="contenedor" >
+             <div className="imagenDiv">
+             <img src={data.image} alt="" width="350" height="450"/>
+             </div>
+             <div className='contenido'>
              <h5 className="card-title"> {data.title}</h5>
              <p className="card-synopsis"> {data.synopsis}</p>
              <p className="card-price"> ${data.price}</p> 
@@ -31,8 +33,8 @@ export const ItemDetail = ({data}) =>{
                 ?<Link to='/cart'>Finalizar compra</Link>
                 :<ItemCount initial={1}  onAdd={onAdd} />   
              }   
-         </div>
-     </div> 
+            </div>
+         </div> 
      </>
     );
 }
