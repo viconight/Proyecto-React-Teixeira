@@ -20,7 +20,6 @@ export const Cart = () => {
         items: cart.map(product => ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})), 
         total: totalPrice(),
     }
-    
 
     const handleClick = () => {
         Swal.fire({
@@ -33,13 +32,13 @@ export const Cart = () => {
         addDoc(orderCollection, order).then(({ id }) => alert("Su codigo de orden es :" +id));
         
     }
-
+    
     if(cart.length === 0){
         return(
         <>
         <div className='content'>
         <p>No hay productos en el carrito,</p>
-        <Link to='/'>Pero , podes agregarle cosas!</Link>
+        <Link to='/'>Pero , podes agregarle cosas! </Link>
         </div>
         </>
         )
