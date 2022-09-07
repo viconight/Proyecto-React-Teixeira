@@ -20,21 +20,20 @@ export const Cart = () => {
         items: cart.map(product => ({id: product.id, title: product.title, price: product.price, quantity: product.quantity})), 
         total: totalPrice(),
     }
+    
 
     const handleClick = () => {
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'No pudimos procesar tu compra!',
-            footer: '<a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">Porque dio error?</a>'
+            icon: 'success',
+            title: 'Compra Realizada!',
+            text: 'Gracias por tu compra!',
           })
         const db = getFirestore();
         const orderCollection = collection(db, 'orders');
-        addDoc(orderCollection, order)
-        .then(({id}) => console.log(id))
-
+        addDoc(orderCollection, order).then(({ id }) => alert("Su codigo de orden es :" +id));
+        
     }
-    
+
     if(cart.length === 0){
         return(
         <>

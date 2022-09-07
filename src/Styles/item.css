@@ -8,7 +8,7 @@
 .card{
     text-align: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: transparent;
 }
 
 .card img{
