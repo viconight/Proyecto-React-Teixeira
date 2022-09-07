@@ -38,7 +38,7 @@ export const Cart = () => {
         <>
         <div className='content'>
         <p>No hay productos en el carrito,</p>
-        <Link to='/'>Pero , podes agregarle cosas! </Link>
+        <Link to='/'>Pero , podes agregarle cosas!</Link>
         </div>
         </>
         )
